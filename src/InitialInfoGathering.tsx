@@ -3,12 +3,13 @@ import {getUserInfo} from "./App.tsx";
 import {useNavigate} from "react-router-dom";
 import image from './assets/undraw_fill_form_re_cwyf (1).svg'
 import {DotLottieReact} from "@lottiefiles/dotlottie-react";
-
+import Entp from './assets/undraw_undraw_undraw_undraw_businessman_e7v0_qrld_-1-_hvmv_-1-_ik9c.svg'
+import student from './assets/undraw_mathematics_-4-otb.svg'
 
 
 export default function InitialInfoGathering(){
 
-    const [currentModal, setCurrentModal] = useState(0)
+    const [currentModal, setCurrentModal] = useState(-1)
     const [error, setError] = useState(0)
     interface InitialInfo {
         name: '',
@@ -19,6 +20,7 @@ export default function InitialInfoGathering(){
         graduationYear: '',
         briefDescription: '',
         isInfoComplete: false
+        type: 'Student'
 
     }
 
@@ -69,6 +71,22 @@ export default function InitialInfoGathering(){
     return (
         <div>
             <div>
+                {currentModal === -1 && <div className='font-cabinet'>
+                    <div className='text-2xl px-4 text-center mb-4 mt-56'>What would you like to sign up as?</div>
+
+
+                    <div className='flex justify-center border shadow-md py-5 w-max px-16 mx-auto rounded-md'>
+                        <img src={student} className='h-28 mr-8'/>
+                    <div className='text-center text-2xl mt-9 ml-8 underline decoration-green-400 decoration-1' onClick={() => setCurrentModal(0)}>Student</div>
+                    </div>
+
+                    <div className='flex justify-center mt-6 border shadow-md py-5 w-max px-16 mx-auto rounded-md'>
+                        <div className='text-center text-2xl mt-9 mr-8 underline decoration-green-400 decoration-1'
+                             onClick={() => setCurrentModal(5)}>Investor
+                        </div>
+                        <img src={Entp} className='h-28 ml-8'/>
+                    </div>
+                </div>}
 
                 {currentModal === 0 && <div className='mr-3 ml-3 text-center border shadow-lg px-5 py-20 mt-32 rounded-md font-cabinet'>
                     <img src={image} alt='formfilling' className='h-24 mb-2 mx-auto '/>
@@ -150,6 +168,17 @@ export default function InitialInfoGathering(){
                     <div className='text-lg'>Wonderful, we're all set!</div>
                     <div onClick={handleNav} className='bg-green-400 w-max mx-auto px-4 font-medium text-lg rounded-sm py-1 mt-4'>cool, head to my dashboard</div>
                 </div>}
+
+                {currentModal === 5 && <div>
+                    <input type='text' value={userInfo.cgpa}
+                           className='w-full focus:outline-none text-gray-800 text-lg appearance-none bg-gray-400 bg-opacity-25 decoration-1 border-dotted border border-gray-600 rounded-md px-4 py-0.5'
+                           onChange={(e) => {
+                               setUserInfo(prev => ({...prev, cgpa: e.target.value}))
+                           }}/>
+
+                </div>
+
+                }
 
 
             </div>
