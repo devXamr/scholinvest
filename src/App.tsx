@@ -3,6 +3,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import InitialInfoGathering from "./InitialInfoGathering.tsx";
 import Landing from "./Landing.tsx";
 import UserDash from "./UserDash.tsx";
+import InvestorDash from "./InvestorDash.tsx";
 
 
 export function getUserInfo(){
@@ -27,6 +28,7 @@ function App() {
                 <Route path='/' element={<Landing/>}/>
                 <Route path='/info' element={<InitialInfoGathering/>}/>
                 <Route path='/dashboard' element={<UserDash/>}/>
+                <Route path='/investorDash' element={<InvestorDash/>}/>
             </Routes>
         </BrowserRouter>
 

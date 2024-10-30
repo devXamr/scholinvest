@@ -16,7 +16,7 @@ export default function UserDash1() {
             <div className='font-light text-md'>Student</div>
             </div>
 
-            <div className='text-center border-2 rounded-full min-w-'>
+            <div className='text-center pr-8 py-2'>
                 <div className='text-sm font-light'>Rating</div>
                 <div className='text-3xl'>86</div>
             </div>

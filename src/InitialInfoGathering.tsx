@@ -11,6 +11,15 @@ export default function InitialInfoGathering(){
 
     const [currentModal, setCurrentModal] = useState(-1)
     const [error, setError] = useState(0)
+
+    interface investorDataIf
+    {
+        name: ''
+        twitter: ''
+        linkedin: ''
+        companyName: ''
+    }
+    const [investorData, setInvestorData]: investorDataIf = useState({})
     interface InitialInfo {
         name: '',
         courseEnrolled: '',
@@ -28,6 +37,10 @@ export default function InitialInfoGathering(){
     const nav = useNavigate()
    function handleNav(){
         nav('/dashboard')
+   }
+
+   function handleInvestorNav(){
+        nav('/investorDash')
    }
 
     useEffect(() => {
@@ -169,16 +182,48 @@ export default function InitialInfoGathering(){
                     <div onClick={handleNav} className='bg-green-400 w-max mx-auto px-4 font-medium text-lg rounded-sm py-1 mt-4'>cool, head to my dashboard</div>
                 </div>}
 
-                {currentModal === 5 && <div>
-                    <input type='text' value={userInfo.cgpa}
+                {currentModal === 5 && <div className='font-cabinet mx-4 mt-16 px-3 border shadow-md py-10'>
+                    <div className='text-lg mt-3 font-cabinet'>What is your name?</div>
+                    <input type='text' value={investorData.name}
                            className='w-full focus:outline-none text-gray-800 text-lg appearance-none bg-gray-400 bg-opacity-25 decoration-1 border-dotted border border-gray-600 rounded-md px-4 py-0.5'
                            onChange={(e) => {
-                               setUserInfo(prev => ({...prev, cgpa: e.target.value}))
+                               setInvestorData(prev => ({...prev, name: e.target.value}))
                            }}/>
 
-                </div>
+                    <div className='text-lg mt-3 font-cabinet'>Please add a link to your twitter profile</div>
+                    <input type='text' value={investorData.twitter}
+                           className='w-full focus:outline-none text-gray-800 text-lg appearance-none bg-gray-400 bg-opacity-25 decoration-1 border-dotted border border-gray-600 rounded-md px-4 py-0.5'
+                           onChange={(e) => {
+                               setInvestorData(prev => ({...prev, twitter: e.target.value}))
+                           }}/>
 
-                }
+                    <div className='text-lg mt-3 font-cabinet'>Please add a link to your linkedin profile</div>
+                    <input type='text' value={investorData.linkedin}
+                           className='w-full focus:outline-none text-gray-800 text-lg appearance-none bg-gray-400 bg-opacity-25 decoration-1 border-dotted border border-gray-600 rounded-md px-4 py-0.5'
+                           onChange={(e) => {
+                               setInvestorData(prev => ({...prev, linkedin: e.target.value}))
+                           }}/>
+
+                    <div onClick={() => setCurrentModal(6)}
+                         className='bg-green-400 w-max mx-auto px-4 font-medium text-lg rounded-sm py-1 mt-4'>continue
+                    </div>
+
+
+                </div>}
+
+
+                {currentModal === 6 && <div className='mx-3 mt-16 px-3 py-10 border rounded-md shadow-md'>
+                    <div className='h-32 w-64 mx-auto'>
+                        <DotLottieReact src='https://lottie.host/9b6ce33e-6081-4a39-9369-372d3da91f55/mABGNCdNHK.json'
+                                        autoplay={true}/>
+                    </div>
+                    <div className='font-light text-center'>you are now ready to start exploring the platform</div>
+                    <div onClick={handleInvestorNav}
+                         className='bg-green-400 w-max mx-auto px-4 font-medium text-lg rounded-sm py-1 mt-4'>head to my homepage
+                    </div>
+
+
+                </div>}
 
 
             </div>
