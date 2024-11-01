@@ -11,6 +11,7 @@ import nodata from './assets/undraw_no_data_re_kwbl.svg'
 export default function UserDash(){
     const [userInfo, setUserInfo] = useState(getUserInfo)
 
+
     return <div className='pb-16'>
         <UserDash1/>
         <UserDash2/>
