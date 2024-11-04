@@ -56,7 +56,18 @@ export default function UserDash2() {
     return <div className='mx-2 mt-3 rounded-md shadow-md py-3 px-4 font-cabinet border'>
         <div className='text-3xl mt-4 underline decoration-2 decoration-green-400'>Your Applications</div>
         <div className='mt-11 mb-11 '>
-            {myApplications.length > 0 && myApplications.map(eachApp => <div>{eachApp.data.loanAmount}</div>)}
+            {myApplications.length > 0 && myApplications.map(eachApp => <div className='flex border justify-between px-3'>
+                <div>
+                    <div className='font-light text-sm'>requested amount</div>
+                    <div className='text-3xl'>{eachApp.data.loanAmount}</div>
+                </div>
+                <div>
+                    <div className='font-light text-sm'>pref. interest</div>
+                    <div className='text-green-600 font-medium'>{eachApp.data.rateOfInterest + '%'}</div>
+                    <div className='font-light text-sm'>repayment</div>
+                    <div className='text-green-600 font-medium'>{eachApp.data.return}</div>
+                </div>
+            </div>)}
 
             {myApplications.length === 0 && <div>
             <img src={nothingFound} className='h-28 mx-auto'/>
@@ -75,8 +86,8 @@ export default function UserDash2() {
                        className='w-full focus:outline-none text-gray-800 text-lg appearance-none bg-gray-400 bg-opacity-25 decoration-1 border-dotted border border-gray-600 rounded-md px-4 py-0.5'/>
                 <div className='text-lg mt-3 font-cabinet'>When would you like to start returning the loan?</div>
                 <div className='flex justify-center'>
-                    <div className={`px-2 py-1 rounded-md border-dotted border-4 mx-3 ${singleLoanApplication.return === 'Before Graduation' && 'bg-green-400 border-0 pt-2'}`} onClick={()=> {setSingleLoanApplication(prev => ({...prev, return: 'Before Graduation'}))}}>Before {userInfo.graduationYear}</div>
-                    <div className={`px-2 py-1 rounded-md border-dotted border-4 mx-3 ${singleLoanApplication.return === 'After Graduation' && 'bg-green-400 border-0 pt-2'}`} onClick={()=> {setSingleLoanApplication(prev => ({...prev, return: 'After Graduation'}))}}>After {userInfo.graduationYear}</div>
+                    <div className={`px-2 py-1 rounded-md border-dotted border-4 mx-3 ${singleLoanApplication.return === 'Before Graduation' && 'bg-green-400 border-0 border-none pt-2'}`} onClick={()=> {setSingleLoanApplication(prev => ({...prev, return: 'Before Graduation'}))}}>Before {userInfo.graduationYear}</div>
+                    <div className={`px-2 py-1 rounded-md border-dotted border-4 mx-3 ${singleLoanApplication.return === 'After Graduation' && 'bg-green-400 border-0 border-none pt-2'}`} onClick={()=> {setSingleLoanApplication(prev => ({...prev, return: 'After Graduation'}))}}>After {userInfo.graduationYear}</div>
                 </div>
 
                 <div className='text-lg mt-3 font-cabinet'>What is the purpose of this loan?</div>
