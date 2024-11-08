@@ -1,0 +1,1 @@
+{"root":["./src/App.tsx","./src/FilterSelection.tsx","./src/InitialInfoGathering.tsx","./src/InvestorDash.tsx","./src/InvestorDash1.tsx","./src/InvestorDash2.tsx","./src/InvestorDash3.tsx","./src/Landing.tsx","./src/SingleFilter.tsx","./src/UserDash.tsx","./src/UserDash1.tsx","./src/UserDash2.tsx","./src/main.tsx","./src/vite-env.d.ts"],"errors":true,"version":"5.6.3"}
