@@ -1,4 +1,3 @@
-import {useEffect, useState} from "react";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import InitialInfoGathering from "./InitialInfoGathering.tsx";
 import Landing from "./Landing.tsx";
@@ -7,9 +6,10 @@ import InvestorDash from "./InvestorDash.tsx";
 
 
 export function getUserInfo(){
-    const info = JSON.parse(localStorage.getItem('userInfo-vultr'))
+    const info = JSON.parse(localStorage.getItem('userInfo-vultr')!)
 
-    if(!info) return {name: '',
+    if(!info) return {
+        name: '',
         courseEnrolled: '',
         uni: '',
         cgpa: '',

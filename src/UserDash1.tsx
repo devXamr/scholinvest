@@ -6,7 +6,7 @@ import {getUserInfo} from "./App.tsx";
 
 export default function UserDash1() {
 
-    const [userInfo, setUserInfo] = useState(getUserInfo)
+    const [userInfo] = useState(getUserInfo)
 
 
     return <div className='mx-2 border mt-3 rounded-md shadow-md py-5 px-5 font-cabinet'>

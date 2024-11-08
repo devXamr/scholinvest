@@ -12,28 +12,10 @@ export default function InitialInfoGathering(){
     const [currentModal, setCurrentModal] = useState(-1)
     const [error, setError] = useState(0)
 
-    interface investorDataIf
-    {
-        name: ''
-        twitter: ''
-        linkedin: ''
-        companyName: ''
-    }
-    const [investorData, setInvestorData]: investorDataIf = useState({})
-    interface InitialInfo {
-        name: '',
-        courseEnrolled: '',
-        uni: '',
-        cgpa: '',
-        annualIncome: '',
-        graduationYear: '',
-        briefDescription: '',
-        isInfoComplete: false
-        type: 'Student'
 
-    }
+    const [investorData, setInvestorData]= useState({name: '', twitter: '', linkedin: ''})
 
-    const [userInfo, setUserInfo]: InitialInfo = useState(getUserInfo)
+    const [userInfo, setUserInfo] = useState(getUserInfo)
     const nav = useNavigate()
    function handleNav(){
         nav('/dashboard')

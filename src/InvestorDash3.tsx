@@ -1,5 +1,5 @@
 import nothingFound from "./assets/undraw_no_data_re_kwbl.svg";
-import {GrFormNextLink} from "react-icons/gr";
+
 
 export default function InvestorDash3() {
     return <div className='mx-2 mt-3 rounded-md shadow-md py-3 px-4 font-cabinet border'>

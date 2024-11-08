@@ -79,10 +79,10 @@ export default function UserDash2() {
         {creationModalOpen && <div className='inset-0 backdrop-blur-sm bg-black bg-opacity-25 fixed border'>
             <div className='border px-4 py-3 mx-3 mt-56 bg-white rounded-md '>
                 <div className='text-lg mt-3 font-cabinet'>Enter the loan amount below:</div>
-                <input type='number' value={singleLoanApplication.loanAmount} onChange={(e) => {setSingleLoanApplication(prev => ({...prev, loanAmount: e.target.value}))}}
+                <input type='number' value={singleLoanApplication.loanAmount} onChange={(e) => {setSingleLoanApplication(prev => ({...prev, loanAmount: Number(e.target.value)}))}}
                        className='w-full focus:outline-none text-gray-800 text-lg appearance-none bg-gray-400 bg-opacity-25 decoration-1 border-dotted border border-gray-600 rounded-md px-4 py-0.5'/>
                 <div className='text-lg mt-3 font-cabinet'>Enter a suitable rate of interest:</div>
-                <input type='number' min={6} max={12} value={singleLoanApplication.rateOfInterest} onChange={(e) => {setSingleLoanApplication(prev => ({...prev, rateOfInterest: e.target.value}))}}
+                <input type='number' min={6} max={12} value={singleLoanApplication.rateOfInterest} onChange={(e) => {setSingleLoanApplication(prev => ({...prev, rateOfInterest: Number(e.target.value)}))}}
                        className='w-full focus:outline-none text-gray-800 text-lg appearance-none bg-gray-400 bg-opacity-25 decoration-1 border-dotted border border-gray-600 rounded-md px-4 py-0.5'/>
                 <div className='text-lg mt-3 font-cabinet'>When would you like to start returning the loan?</div>
                 <div className='flex justify-center'>

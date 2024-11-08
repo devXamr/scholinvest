@@ -1,15 +1,13 @@
-import {useState} from "react";
-import {getUserInfo} from "./App.tsx";
-import { GrFormNextLink } from "react-icons/gr";
+
 import UserDash1 from "./UserDash1.tsx";
-import nothingFound from './assets/undraw_void_-3-ggu.svg'
+
 import UserDash2 from "./UserDash2.tsx";
 import nodata from './assets/undraw_no_data_re_kwbl.svg'
 
 
 
 export default function UserDash(){
-    const [userInfo, setUserInfo] = useState(getUserInfo)
+
 
 
     return <div className='pb-16'>

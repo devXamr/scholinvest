@@ -1,25 +1,20 @@
 import {CgProfile} from "react-icons/cg";
-import {FaAngleDown} from "react-icons/fa";
 import fireworks from "./assets/undraw_fireworks_re_2xi7.svg";
 import {useState} from "react";
 import SingleFilter from "./SingleFilter.tsx";
-import { TiTick } from "react-icons/ti";
 import FilterSelection from "./FilterSelection.tsx";
 
 export default function InvestorDash1({username}) {
-    interface Preferences {
-        cgpa: number,
-        amount: number,
-        interest: number,
-        rating: number
-    }
+
 
     //modal opener and selector
     const [modalPick, setModalPick] = useState(0)
-    const [optionChosen, setOptionChosen]: Preferences = useState({cgpa:0,
+    const [optionChosen, setOptionChosen] = useState({
+        cgpa:0,
         amount:0,
         interest:0,
-        rating:0})
+        rating:0
+    })
 
     function modalNumberPicker(number: number){
         console.log('the current value is: ' + number)
